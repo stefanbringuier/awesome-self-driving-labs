@@ -4,7 +4,7 @@ on:
     paths:
       - 'bibtex/references.bib'
     branches:
-      - main
+      - site-version
   workflow_dispatch:
 
 jobs:

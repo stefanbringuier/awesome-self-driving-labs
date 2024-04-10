@@ -3,7 +3,7 @@ name: Generate References
 on:
   push:
     branches:
-      - main
+      - site-version
   workflow_dispatch:  # Allow manually triggering the workflow
 jobs:
   run-script:
