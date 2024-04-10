@@ -2,6 +2,15 @@ site_name: Awesome Self-Driving Labs
 
 theme:
   name: material
+  features:
+        - toc.follow
 
+plugins:
+    - search
+
+markdown_extensions:
+    - toc:
+        permalink: true
+        toc_depth: 4
 nav:
   - Home: index.md
