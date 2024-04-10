@@ -1,0 +1,7 @@
+site_name: Awesome Self-Driving Labs
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
