@@ -10,11 +10,20 @@
   - [Academic Research](#academic-research)
   - [Education](#education)
   - [Industry](#industry)
+    - [Cloud-based Labs](#cloud-based-labs)
+    - [Software-as-a-Service (SaaS)](#software-as-a-service-saas)
   - [Prospective](#prospective)
 - [Software](#software)
   - [Workflow Orchestration](#workflow-orchestration)
+    - [Experimental Science](#experimental-science)
+    - [General Purpose](#general-purpose)
+    - [Communication Protocols/Server Frameworks](#communication-protocolsserver-frameworks)
   - [Optimization](#optimization)
+    - [Open-source](#open-source)
+    - [Proprietary](#proprietary)
   - [Research Data Management](#research-data-management)
+    - [Open-source](#open-source-1)
+    - [Proprietary](#proprietary-1)
   - [Other](#other)
 - [People](#people)
 - [Media](#media)
@@ -69,6 +78,7 @@ Examples of SDLs for [academic research](#academic-research), [education](#educa
 
 ### Emoji Key
 The following emoji are used to help [represent full autonomy vs. manual intervention](https://github.com/sgbaird/awesome-self-driving-labs/discussions/15) for various categories.
+
 | Category | Emoji |
 | ---- | ---- |
 | Synthesis |🧪|
