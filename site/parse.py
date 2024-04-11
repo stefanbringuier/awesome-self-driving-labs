@@ -108,5 +108,5 @@ if "__main__" == __name__:
     nav_entries = parse_readme(readme_path, 
                                output_dir, 
                                bibtex_filename='bibtex/references.bib', 
-                               conduct_filename='code-of-conduct.md'))
+                               conduct_filename='code-of-conduct.md')
     update_mkdocs_nav(nav_entries)
