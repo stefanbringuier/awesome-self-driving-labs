@@ -1,0 +1,1130 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../review_papers/">
+      
+      
+        <link rel="next" href="../software/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>SDL Examples - Awesome Self-Driving Labs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sdl-examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Awesome Self-Driving Labs" class="md-header__button md-logo" aria-label="Awesome Self-Driving Labs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Awesome Self-Driving Labs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SDL Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Awesome Self-Driving Labs" class="md-nav__button md-logo" aria-label="Awesome Self-Driving Labs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Awesome Self-Driving Labs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contents_%3C%21--_omit_from_toc_--%3E/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contents <!-- omit from toc -->
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../review_papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Review Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SDL Examples
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    SDL Examples
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdl-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDL Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SDL Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emoji-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emoji Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#academic-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Academic Research
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Academic Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      2024
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      2023
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      2022
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      2021
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      2020
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      2018
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2016" class="md-nav__link">
+    <span class="md-ellipsis">
+      2016
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      2014
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#education" class="md-nav__link">
+    <span class="md-ellipsis">
+      Education
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Education">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2023_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2023
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2022_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2022
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2021
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2020
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      2019
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Industry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-based-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud-based Labs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-as-a-service-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software-as-a-Service (SaaS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prospective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prospective
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../people/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    People
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sdl-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      SDL Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SDL Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#emoji-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Emoji Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#academic-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Academic Research
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Academic Research">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      2024
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      2023
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      2022
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      2021
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      2020
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      2018
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2016" class="md-nav__link">
+    <span class="md-ellipsis">
+      2016
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      2014
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#education" class="md-nav__link">
+    <span class="md-ellipsis">
+      Education
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Education">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2023_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2023
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2022_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2022
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2021_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2021
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2020
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      2019
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#industry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Industry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Industry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-based-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud-based Labs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-as-a-service-saas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software-as-a-Service (SaaS)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prospective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prospective
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>SDL Examples</h1>
+
+<h2 id="sdl-examples">SDL Examples<a class="headerlink" href="#sdl-examples" title="Permanent link">&para;</a></h2>
+<p>Examples of SDLs for <a href="#academic-research">academic research</a>, <a href="#education">education</a>, and <a href="#industry">industry</a>.</p>
+<h3 id="emoji-key">Emoji Key<a class="headerlink" href="#emoji-key" title="Permanent link">&para;</a></h3>
+<p>The following emoji are used to help <a href="https://github.com/sgbaird/awesome-self-driving-labs/discussions/15">represent full autonomy vs. manual intervention</a> for various categories.</p>
+<p>| Category | Emoji |</p>
+<p>| ---- | ---- |</p>
+<p>| Synthesis |🧪|</p>
+<p>| Characterization | 🔬|</p>
+<p>| Sample transfer |🏗️|</p>
+<p>| Experiment planning |💻|</p>
+<p>| Manual intervention |✖️|</p>
+<h3 id="academic-research">Academic Research<a class="headerlink" href="#academic-research" title="Permanent link">&para;</a></h3>
+<p>Examples of SDLs which are used primarily in academic research settings.</p>
+<h4 id="2024">2024 <!-- omit from toc --><a class="headerlink" href="#2024" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🧪🔬🏗️💻 | <a href="https://doi.org/10.1038/s41467-023-44599-9">A dynamic knowledge graph approach to distributed self-driving laboratories</a>. Bai, J.; Mosbach, S.; Taylor, C. J.; Karan, D.; Lee, K. F.; Rihm, S. D.; Akroyd, J.; Lapkin, A. A.; Kraft, M. <em>Nat. Commun.</em> 2024, 15, 462.</li>
+</ul>
+<h4 id="2023">2023 <!-- omit from toc --><a class="headerlink" href="#2023" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>🧪🔬🏗️✖️ | <a href="https://doi.org/10.48550/arXiv.2309.00544">Powder-Bot: A Modular Autonomous Multi-Robot Workflow for Powder X-Ray Diffraction</a>. Lunt, A. M.; Fakhruldeen, H.; Pizzuto, G.; Longley, L.; White, A.; Rankin, N.; Clowes, R.; Alston, B. M.; Cooper, A. I.; Chong, S. Y. <em>arXiv</em> 2023.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1038/s44160-023-00250-5">A Robotic Platform for the Synthesis of Colloidal Nanocrystals</a>. Zhao, H.; Chen, W.; Huang, H.; Sun, Z.; Chen, Z.; Wu, L.; Zhang, B.; Lai, F.; Wang, Z.; Adam, M. L.; Pang, C. H.; Chu, P. K.; Lu, Y.; Wu, T.; Jiang, J.; Yin, Z.; Yu, X.-F. <em>Nat. Synth</em> 2023.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1126/science.adi1407">Autonomous, multiproperty-driven molecular discovery: From predictions to measurements and back</a>. Koscher, B.; Canty, R. B.; McDonald, M. A.; Greenman, K. P.; McGill, C. J.; Bilodeau, C. L.; Jin, W.; Wu, H.; Vermeire, F. H.; Jin, B.; Hart, T.; Kulesza, T.; Li, S.-C.; Jaakkola, T. S.; Barzilay, R.; Gómez-Bombarelli, R.; Green, W. H.; &amp; Jensen, K. F. <em>Science</em> 2023.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1101/2023.05.20.541582">Self-driving laboratories to autonomously navigate the protein fitness landscape</a>. Rapp, J. T.; Bremer, B. J.; Romero, P. A. <em>bioRxiv</em> 2023.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.48550/arXiv.2304.13927">NIMS-OS: An automation software to implement a closed loop between artificial intelligence and robotic experiments in materials science</a>. Tamura, R.; Tsuda, K.; Matsuda, S. <em>arXiv</em> 2023.</p>
+</li>
+</ul>
+<h4 id="2022">2022 <!-- omit from toc --><a class="headerlink" href="#2022" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1039/D2DD00029F">A Self-Driving Laboratory Designed to Accelerate the Discovery of Adhesive Materials</a>. Rooney, M. B.; MacLeod, B. P.; Oldford, R.; Thompson, Z. J.; White, K. L.; Tungjunyatham, J.; Stankiewicz, B. J.; Berlinguette, C. P. <em>Digital Discovery</em> 2022, 10.1039.D2DD00029F.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1038/s41467-022-28580-6">A self-driving laboratory advances the Pareto front for material properties</a>. MacLeod, B. P., Parlane, F. G. L., Rupnow, C. C., Dettelbach, K. E., Elliott, M. S., Morrissey, T. D., Haley, T. H., Proskurin, O., Rooney, M. B., Taherimakhsousi, N., Dvorak, D. J., Chiu, H. N., Waizenegger, C. E. B., Ocean, K., Mokhtari, M. &amp; Berlinguette, C. P. <em>Nat Commun.</em> 2022, 13, 995.</p>
+</li>
+<li>
+<p>🧪🔬✖️💻 | <a href="https://doi.org/10.1039/D2DD00025C">Autonomous retrosynthesis of gold nanoparticles via spectral shape matching</a>. Vaddi, Kiran; Huat Thart Chiang; and Lilo D. Pozzo. <em>Digital Discovery</em> 2022, 10.1039/D2DD00025C.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1002/advs.202203422">Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy</a>. Roccapriore, K. M., Kalinin, S. V., Ziatdinov, M. <em>Adv. Sci.</em> 2022, 9, 2203422. </p>
+</li>
+</ul>
+<h4 id="2021">2021 <!-- omit from toc --><a class="headerlink" href="#2021" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1126/sciadv.abg4930">Autonomous Materials Synthesis via Hierarchical Active Learning of Nonequilibrium Phase Diagrams</a>. Ament, S.; Amsler, M.; Sutherland, D. R.; Chang, M.-C.; Guevarra, D.; Connolly, A. B.; Gregoire, J. M.; Thompson, M. O.; Gomes, C. P.; van Dover, R. B. <em>Sci. Adv.</em> 2021, 7 (51), eabg4930.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1021/acsami.1c16506">Accelerate Synthesis of Metal–Organic Frameworks by a Robotic Platform and Bayesian Optimization</a>. Xie, Y.; Zhang, C.; Deng, H.; Zheng, B.; Su, J.-W.; Shutt, K.; Lin, J. <em>ACS Appl. Mater. Interfaces</em> 2021, 13 (45), 53485–53491.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1021/acsnano.1c02104">Automated and Autonomous Experiments in Electron and Scanning Probe Microscopy</a>. Kalinin, S. V.; Ziatdinov, M.; Hinkle, J.; Jesse, S.; Ghosh, A.; Kelley, K. P.; Lupini, A. R.; Sumpter, B. G.; Vasudevan, R. K. <em>ACS Nano 2021</em>, 15 (8), 12604–12627.</p>
+</li>
+<li>
+<p>🧪🔬✖️💻 | <a href="https://doi.org/10.1016/j.mtphys.2020.100296">Realization of closed-loop optimization of epitaxial titanium nitride thin-film growth via machine learning</a>. Ohkubo, I.; Hou, Z.; Lee, J. N.; Aizawa, T.' Lippmaa, M.; Chikyow, T.; Mori, T. <em>Materials Today Physics</em> 2021, 16, 100296.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1557/s43577-021-00051-1">Toward Autonomous Additive Manufacturing: Bayesian Optimization on a 3D Printer</a>. Deneault, J. R.; Chang, J.; Myung, J.; Hooper, D.; Armstrong, A.; Pitt, M.; Maruyama, B. <em>MRS Bulletin</em> 2021, 46 (7), 566–575.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1016/j.isci.2021.102262">Using simulation to accelerate autonomous experimentation: A case study using mechanics</a>. Gongora, A. E.; Snapp, K. L.; Whiting, E.; Riley, P.; Reyes, K. G.; Morgan, E. F.; Brown, K. A., <em>Iscience</em> 2021, 24(4).</p>
+</li>
+</ul>
+<h4 id="2020">2020 <!-- omit from toc --><a class="headerlink" href="#2020" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1016/j.xcrp.2020.100264">Autonomous Discovery of Battery Electrolytes with Robotic Experimentation and Machine Learning</a>. Dave, A.; Mitchell, J.; Kandasamy, K.; Wang, H.; Burke, S.; Paria, B.; Póczos, B.; Whitacre, J.; Viswanathan, V. <em>Cell Reports Physical Science</em> 2020, 1 (12), 100264.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1126/sciadv.aaz8867">Self-Driving Laboratory for Accelerated Discovery of Thin-Film Materials</a>. MacLeod, B. P.; Parlane, F. G. L.; Morrissey, T. D.; Häse, F.; Roch, L. M.; Dettelbach, K. E.; Moreira, R.; Yunker, L. P. E.; Rooney, M. B.; Deeth, J. R.; Lai, V.; Ng, G. J.; Situ, H.; Zhang, R. H.; Elliott, M. S.; Haley, T. H.; Dvorak, D. J.; Aspuru-Guzik, A.; Hein, J. E.; Berlinguette, C. P. <em>Sci. Adv.</em> 2020, 6 (20), eaaz8867.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1371/journal.pone.0229862">ChemOS: An Orchestration Software to Democratize Autonomous Discovery</a>. Roch, L. M.; Häse, F.; Kreisbeck, C.; Tamayo-Mendoza, T.; Yunker, L. P. E.; Hein, J. E.; Aspuru-Guzik, A. <em>PLoS ONE</em> 2020, 15 (4), e0229862.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1002/adma.201907801">Beyond Ternary OPV: High‐Throughput Experimentation and Self‐Driving Laboratories Optimize Multicomponent Systems</a>. Langner, S.; Häse, F.; Perea, J. D.; Stubhan, T.; Hauch, J.; Roch, L. M.; Heumueller, T.; Aspuru‐Guzik, A.; Brabec, C. J. <em>Adv. Mater.</em> 2020, 32 (14), 1907801.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1063/5.0020370">Autonomous materials synthesis by machine learning and robotics</a>. Shimizu, R.; Kobayashi, S.; Watanabe, Y.; Ando, Y.; Hitosugi, T. <em>APL Mater.</em> 2020, 8 (11), 111110.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1126/sciadv.aaz1708">A Bayesian experimental autonomous researcher for mechanical design</a>. Gongora, A. E.; Xu, B.; Perry, W.; Okoye, C.; Riley, P.; Reyes, K. G.; Morgan, E. F.; Brown, K. A. <em>Sci. Adv.</em> 2020, 6 (15), eaaz1708.</p>
+</li>
+</ul>
+<h4 id="2018">2018 <!-- omit from toc --><a class="headerlink" href="#2018" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🧪🔬🏗️💻 | <a href="https://doi.org/10.1038/s41467-018-05828-8">Networking Chemical Robots for Reaction Multitasking</a>. Caramelli, D.; Salley, D.; Henson, A.; Camarasa, G. A.; Sharabi, S.; Keenan, G.; Cronin, L. <em>Nat Commun</em> 2018, 9 (1), 3406.</li>
+</ul>
+<h4 id="2016">2016 <!-- omit from toc --><a class="headerlink" href="#2016" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🧪🔬🏗️💻 | <a href="https://doi.org/10.1038/npjcompumats.2016.31">Autonomy in Materials Research: A Case Study in Carbon Nanotube Growth</a>. Nikolaev, P.; Hooper, D.; Webber, F.; Rao, R.; Decker, K.; Krein, M.; Poleski, J.; Barto, R.; Maruyama, B. <em>npj Comput Mater</em> 2016, 2 (1), 16031.</li>
+</ul>
+<h4 id="2014">2014 <!-- omit from toc --><a class="headerlink" href="#2014" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🧪🔬🏗️💻 | <a href="https://doi.org/10.1038/ncomms6571">Evolution of Oil Droplets in a Chemorobotic Platform</a>. Gutierrez, J. M. P.; Hinkley, T.; Taylor, J. W.; Yanev, K.; Cronin, L. <em>Nat Commun</em> 2014, 5 (1), 5571.</li>
+</ul>
+<h3 id="education">Education<a class="headerlink" href="#education" title="Permanent link">&para;</a></h3>
+<p>Examples of SDLs which are used primarily in educational settings.</p>
+<h4 id="2023_1">2023 <!-- omit from toc --><a class="headerlink" href="#2023_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1016/j.cej.2022.139099">Automated PH Adjustment Driven by Robotic Workflows and Active Machine Learning</a>. Pomberger, A.; Jose, N.; Walz, D.; Meissner, J.; Holze, C.; Kopczynski, M.; Müller-Bischof, P.; Lapkin, A. A. <em>Chemical Engineering Journal</em> 2023, 451, 139099.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.26434/chemrxiv-2023-xgx5h">Build Instructions for Closed-Loop Spectroscopy Lab: Light-Mixing Demo</a>. Baird, S. G.; Sparks, T. D. <em>ChemRxiv</em> January 9, 2023.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1039/D3DD00150D">Driving school for self-driving labs</a>. Snapp, K. L.; Brown, K. A. <em>Digital Discovery</em> 2023, 10.1039/D3DD00150D.</p>
+</li>
+</ul>
+<h4 id="2022_1">2022 <!-- omit from toc --><a class="headerlink" href="#2022_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1016/j.matt.2022.11.007">What Is a Minimal Working Example for a Self-Driving Laboratory?</a>. Baird, S. G.; Sparks, T. D. <em>Matter</em> 2022, 5 (12), 4170–4178.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1557/s43577-022-00430-2">The LEGOLAS Kit: A Low-Cost Robot Science Kit for Education with Symbolic Regression for Hypothesis Discovery and Validation</a>. Saar, L.; Liang, H.; Wang, A.; McDannald, A.; Rodriguez, E.; Takeuchi, I.; Kusne, A. G. <em>MRS Bulletin</em> 2022, 47 (9), 881–885.</p>
+</li>
+</ul>
+<h4 id="2021_1">2021 <!-- omit from toc --><a class="headerlink" href="#2021_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🧪🔬🏗️💻 | <a href="https://doi.org/10.1021/acs.jchemed.0c01394">Augmented Titration Setup for Future Teaching Laboratories</a>. Yang, F.; Lai, V.; Legard, K.; Kozdras, S.; Prieto, P. L.; Grunert, S.; Hein, J. E. J. <em>Chem. Educ.</em> 2021, 98 (3), 876–881.</li>
+</ul>
+<h4 id="2020_1">2020 <!-- omit from toc --><a class="headerlink" href="#2020_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.1371/journal.pone.0229862">ChemOS: An Orchestration Software to Democratize Autonomous Discovery</a>. Roch, L. M.; Häse, F.; Kreisbeck, C.; Tamayo-Mendoza, T.; Yunker, L. P. E.; Hein, J. E.; Aspuru-Guzik, A. <em>PLoS ONE</em> 2020, 15 (4), e0229862.</p>
+</li>
+<li>
+<p>🧪🔬🏗️💻 | <a href="https://doi.org/10.26434/chemrxiv.12097908.v1">Autonomous Titration for Chemistry Classrooms: Preparing Students for Digitized Chemistry Laboratories</a>. Häse, F.; Tamayo-Mendoza, T.; Boixo, C.; Romero, J.; Roch, L.; Aspuru-Guzik, A. <em>ChemRxiv</em> 2020.</p>
+</li>
+</ul>
+<h4 id="2019">2019 <!-- omit from toc --><a class="headerlink" href="#2019" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🧪🔬🏗️💻 | <a href="https://doi.org/10.1021/acs.jchemed.9b00025">Rethinking a Timeless Titration Experimental Setup through Automation and Open-Source Robotic Technology: Making Titration Accessible for Students of All Abilities</a>. Soong, R.; Agmata, K.; Doyle, T.; Jenne, A.; Adamo, A.; Simpson, A. J. J. <em>Chem. Educ.</em> 2019, 96 (7), 1497–1501.</li>
+</ul>
+<h3 id="industry">Industry<a class="headerlink" href="#industry" title="Permanent link">&para;</a></h3>
+<p>Industry examples involving SDLs.</p>
+<h4 id="cloud-based-labs">Cloud-based Labs<a class="headerlink" href="#cloud-based-labs" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><a href="https://research.ibm.com/science/ibm-roborxn/">IBM RoboRXN</a></p>
+</li>
+<li>
+<p><a href="https://www.emeraldcloudlab.com/">Emerald Cloud Lab</a></p>
+</li>
+<li>
+<p><a href="https://strateos.com/">Strateos</a></p>
+</li>
+<li>
+<p><a href="https://www.culturebiosciences.com/">Culture Biosciences</a></p>
+</li>
+<li>
+<p><a href="https://dev.arctoris.com/">Arctoris</a></p>
+</li>
+<li>
+<p><a href="https://www.kebotix.com">Kebotix</a></p>
+</li>
+<li>
+<p><a href="https://cloudlab.cmu.edu/">CMU Cloud Lab</a></p>
+</li>
+<li>
+<p><a href="https://www.anl.gov/autonomous-discovery">Argonne National Laboratory</a></p>
+</li>
+</ul>
+<h4 id="software-as-a-service-saas">Software-as-a-Service (SaaS)<a class="headerlink" href="#software-as-a-service-saas" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><a href="https://atinary.com/">Atinary</a></p>
+</li>
+<li>
+<p><a href="https://research.ibm.com/topics/accelerated-discovery">IBM Accelerated Discovery</a></p>
+</li>
+<li>
+<p><a href="https://citrine.io/">Citrine Informatics</a></p>
+</li>
+<li>
+<p><a href="https://sunthetics.io/">Sunthetics</a></p>
+</li>
+<li>
+<p><a href="https://www.globus.org/">Globus</a></p>
+</li>
+</ul>
+<h3 id="prospective">Prospective<a class="headerlink" href="#prospective" title="Permanent link">&para;</a></h3>
+<p>Ideas for SDLs.</p>
+<ul>
+<li>
+<p><a href="https://doi.org/10.1016/j.xcrp.2022.101063">Reproducible Sorbent Materials Foundry for Carbon Capture at Scale</a>. McDannald, A.; Joress, H.; DeCost, B.; Baumann, A. E.; Kusne, A. G.; Choudhary, K.; Yildirim, T.; Siderius, D. W.; Wong-Ng, W.; Allen, A. J.; Stafford, C. M.; Ortiz-Montalvo, D. L. CR-PHYS-SC 2022, 3 (10).</p>
+</li>
+<li>
+<p><a href="https://doi.org/10.1016/j.matt.2022.08.017">An Object-Oriented Framework to Enable Workflow Evolution across Materials Acceleration Platforms</a>. Leong, C. J.; Low, K. Y. A.; Recatala-Gomez, J.; Quijano Velasco, P.; Vissol-Gaudin, E.; Tan, J. D.; Ramalingam, B.; I Made, R.; Pethe, S. D.; Sebastian, S.; Lim, Y.-F.; Khoo, Z. H. J.; Bai, Y.; Cheng, J. J. W.; Hippalgaonkar, K. <em>Matter</em> 2022, 5 (10), 3124–3134.</p>
+</li>
+<li>
+<p><a href="https://arxiv.org/abs/2302.04397">Designing Workflows for Materials Characterization</a>. Kalinin, S. V., Ziatdinov, M., Ahmadi, M., Ghosh, A., Roccapriore, K., Liu, Y., &amp; Vasudevan, R. K. (2023). <em>arXiv:2302.04397</em>.</p>
+</li>
+</ul>
+<!--- - [Delivering Real-Time Multi-Modal Materials Analysis with Enterprise Beamlines](https://doi.org/10.1016/j.xcrp.2022.101112). Maffettone, P. M.; Campbell, S.; Hanwell, M. D.; Wilkins, S.; Olds, D. CR-PHYS-SC 2022, 3 (11).
+
+- [An Automated Biomateriomics Platform for Sustainable Programmable Materials Discovery](https://doi.org/10.1016/j.matt.2022.10.003). Lee, N. A.; Shen, S. C.; Buehler, M. J. Matter 2022, 5 (11), 3597–3613. Commented, since I haven't read through these works---->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.follow"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
