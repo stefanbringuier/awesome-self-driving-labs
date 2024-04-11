@@ -32,7 +32,7 @@ jobs:
 
     - name: Install additional dependencies for site building
       run: |
-        pip install -r docs/requirements.txt
+        pip install -r ./site/requirements.txt
 
     - name: Parse README and Update MkDocs Nav
       run: |
