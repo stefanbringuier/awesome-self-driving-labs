@@ -1,8 +1,9 @@
 name: Build and Deploy Site
 on:
-  push:
-    paths:
-      - 'bibtex/references.bib'
+  workflow_run:
+    workflows: ["Generate References"]
+    types: 
+      - completed
     branches:
       - site-version
   workflow_dispatch:
@@ -35,4 +36,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./site/site  
+        publish_dir: ./site/site
