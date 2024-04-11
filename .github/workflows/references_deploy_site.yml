@@ -40,6 +40,7 @@ jobs:
 
     - name: Build MkDocs Site
       run: |
+        cd site
         mkdocs build
 
     - name: Deploy to GitHub Pages
