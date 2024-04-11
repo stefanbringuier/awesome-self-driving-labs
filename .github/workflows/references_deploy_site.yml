@@ -1,39 +1,55 @@
-name: Build and Deploy Site
+name: Generate References and Deploy Site
+
 on:
-  workflow_run:
-    workflows: ["Generate References"]
-    types: 
-      - completed
+  push:
     branches:
       - site-version
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  full-process:
     runs-on: ubuntu-latest
     
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-        
-    - name: Install dependencies
+
+    - name: Install initial dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Create BibTeX from readme.md
+      run: |
+        mkdir -p bibtex
+        cd bibtex
+        python generate_bibtex.py
+
+    - name: Install additional dependencies for site building
+      run: |
         pip install -r docs/requirements.txt
-    
+
     - name: Parse README and Update MkDocs Nav
-      run: python ./site/parse.py
-      
+      run: |
+        python ./site/parse.py
+
     - name: Build MkDocs Site
-      run: mkdocs build
-      
+      run: |
+        mkdocs build
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./site/site
+
+    - name: Commit BibTeX file
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: 'bibtex/references.bib'
+        default_author: github_actions
