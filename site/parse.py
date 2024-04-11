@@ -106,7 +106,7 @@ def update_mkdocs_nav(nav_entries, mkdocs_yml_path='mkdocs.yml'):
                 file.write(line)
 if "__main__" == __name__:
     readme_path = 'readme.md'
-    output_dir = 'docs'
+    output_dir = 'site/docs'
     nav_entries = parse_readme(readme_path, 
                                output_dir, 
                                bibtex_filename='bibtex/references.bib', 
