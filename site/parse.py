@@ -109,4 +109,4 @@ if "__main__" == __name__:
                                output_dir, 
                                bibtex_filename='bibtex/references.bib', 
                                conduct_filename='code-of-conduct.md')
-    update_mkdocs_nav(nav_entries)
+    update_mkdocs_nav(nav_entries, mkdocs_yml_path='site/mkdocs.yml')
