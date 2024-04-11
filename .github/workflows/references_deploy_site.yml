@@ -39,8 +39,8 @@ jobs:
         python ./site/parse.py
 
     - name: Build MkDocs Site
+      working-directory: site
       run: |
-        cd site
         mkdocs build
 
     - name: Deploy to GitHub Pages

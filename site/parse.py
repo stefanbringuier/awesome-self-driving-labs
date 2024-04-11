@@ -4,10 +4,12 @@ import shutil
 
 def parse_readme(readme_path, output_dir, bibtex_filename='../bibtex/references.bib', conduct_filename='../code-of-conduct.md'):
     if not os.path.exists(output_dir):
+        print(f"Created folder {output_dir}")
         os.makedirs(output_dir)
 
     assets_dir = os.path.join(output_dir, 'assets')
     if not os.path.exists(assets_dir):
+        print(f"Created folder {assets_dir}")
         os.makedirs(assets_dir)
 
     # Copying bibtex and code of conduct files to assets directory
